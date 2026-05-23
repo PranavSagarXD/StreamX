@@ -1,4 +1,4 @@
-![StreamX](/public/preview.webp)
+![StreamX](/public/preview.png)
 
 # [StreamX](https://streamx-one.vercel.app/)
 

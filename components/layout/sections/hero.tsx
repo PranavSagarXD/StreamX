@@ -143,7 +143,7 @@ export const HeroSection = () => {
                     width={768}
                     height={1680}
                     className="pointer-events-none select-none object-cover w-full h-auto"
-                    src="/mobile.webp"
+                    src="/mobile.png"
                     priority
                     alt="StreamX on Mobile"
                   />
@@ -154,7 +154,7 @@ export const HeroSection = () => {
                     height={1080}
                     className="pointer-events-none select-none object-cover w-full h-auto"
                     priority
-                    src="/preview.webp"
+                    src="/preview.png"
                     alt="StreamX Platform"
                   />
                 </div>

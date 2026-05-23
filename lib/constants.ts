@@ -16,7 +16,7 @@ export const LOGGER_TITLE = "StreamX 3.0";
 // Example: RESEND_FROM_EMAIL="StreamX <noreply@yourdomain.com>"
 export const MAGIC_LINK_RESEND_FROM =
   process.env.NODE_ENV === "production"
-    ? "StreamX <login@auth.StreamX.com>"
+    ? "StreamX <onboarding@resend.dev>"
     : process.env.RESEND_FROM_EMAIL || "StreamX <delivered@resend.dev>";
 export const MAGIC_LINK_RESEND_SUBJECT =
   "StreamX.com - Here's your magic link to sign in";

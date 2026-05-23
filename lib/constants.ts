@@ -19,7 +19,7 @@ export const MAGIC_LINK_RESEND_FROM =
     ? "StreamX <onboarding@resend.dev>"
     : process.env.RESEND_FROM_EMAIL || "StreamX <delivered@resend.dev>";
 export const MAGIC_LINK_RESEND_SUBJECT =
-  "StreamX.com - Here's your magic link to sign in";
+  "StreamX - Here's your magic link to sign in";
 
 export const TMDB_BASE_URL = "https://api.tmdb.org/3";
 let TMDB_API_KEY: string | undefined;

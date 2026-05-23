@@ -17,10 +17,8 @@ interface MagicLinkEmailProps {
 }
 
 export const MagicLinkEmail = ({ url, host: _host }: MagicLinkEmailProps) => {
-  const logoSrc =
-    process.env.NODE_ENV === "production"
-      ? "https://StreamX/logo.webp"
-      : "/static/logo.webp";
+  const baseUrl = process.env.NEXT_PUBLIC_URL || "";
+  const logoSrc = `${baseUrl}/logo.webp`;
 
   return (
     <Html>
@@ -55,11 +53,7 @@ export const MagicLinkEmail = ({ url, host: _host }: MagicLinkEmailProps) => {
           <Section style={signatureSection}>
             <Text style={signature}>Cheers,</Text>
             <Text style={signature}>
-              - The{" "}
-              <Link href="https://StreamX" style={link}>
-                StreamX
-              </Link>{" "}
-              team
+              - The StreamX team
             </Text>
           </Section>
 
@@ -171,10 +165,6 @@ const footerSection = {
 const footer = {
   fontSize: "14px",
   lineHeight: "20px",
-  color: "#9ca3af",
-  margin: "0",
-};
-neHeight: "20px",
   color: "#9ca3af",
   margin: "0",
 };

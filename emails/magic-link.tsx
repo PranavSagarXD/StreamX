@@ -16,9 +16,10 @@ interface MagicLinkEmailProps {
   host: string;
 }
 
-export const MagicLinkEmail = ({ url, host: _host }: MagicLinkEmailProps) => {
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "";
-  const logoSrc = `${baseUrl}/logo.webp`;
+export const MagicLinkEmail = ({ url, host }: MagicLinkEmailProps) => {
+  // Use the host provided by Auth.js
+  const protocol = host.includes("localhost") ? "http" : "https";
+  const logoSrc = `${protocol}://${host}/logo.webp`;
 
   return (
     <Html>

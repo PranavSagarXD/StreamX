@@ -1,6 +1,6 @@
 ![StreamX](/public/preview.webp)
 
-# [StreamX](https://github.com/PranavSagarXD/StreamX)
+# [StreamX](https://streamx-one.vercel.app/)
 
 **StreamX** is a high-performance, open-source streaming aggregator designed for the modern web. It provides a seamless, ad-free interface for discovering and watching movies and TV shows by curating content from the most reliable API providers.
 

@@ -37,4 +37,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 certificates
-.cursor
+.cursor.env
+.env.local
+.env
+.env.local

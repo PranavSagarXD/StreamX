@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Discover popular and top-rated movies on StreamX.",
   },
   alternates: {
-    canonical: "https://StreamX.com/movies",
+    canonical: "https://StreamX-one.vercel.app/movies",
   },
 };
 

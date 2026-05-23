@@ -20,24 +20,24 @@ export const metadata: Metadata = {
     "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
   openGraph: {
     type: "website",
-    url: "https://StreamX.com",
+    url: "https://StreamX-one.vercel.app",
     title: "Home | StreamX",
     description:
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
     images: [
       {
-        url: "https://StreamX.com/og.webp",
+        url: "https://StreamX-one.vercel.app/og.webp",
         alt: "Home | StreamX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://StreamX.com",
+    site: "https://StreamX-one.vercel.app",
     title: "Home |StreamX",
     description:
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
-    images: ["https://StreamX.com/og.webp"],
+    images: ["https://StreamX-one.vercel.app/og.webp"],
   },
 };
 

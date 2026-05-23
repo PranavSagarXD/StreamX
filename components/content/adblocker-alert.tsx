@@ -61,7 +61,7 @@ export const AdblockerAlert = ({
             Are you sure you don&apos;t want an ad-blocker?
           </AlertDialogTitle>
           <AlertDialogDescription>
-            <span className="font-bold text-primary">StreamX.com</span>{" "}
+            <span className="font-bold text-primary">StreamX-one.vercel.app</span>{" "}
             itself is ad-free. However, the APIs we aggregate from often inject
             scripts within their iframes to display popups and or ads.
           </AlertDialogDescription>

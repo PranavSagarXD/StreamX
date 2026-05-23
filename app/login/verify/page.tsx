@@ -16,24 +16,24 @@ export const metadata: Metadata = {
   keywords: ["StreamX", "Verify Email", "Magic Link", "Authentication"],
   openGraph: {
     type: "website",
-    url: "https://StreamX.com/login/verify",
+    url: "https://StreamX-one.vercel.app/login/verify",
     title: "Verify Email | StreamX",
     description: "Check your email for the magic link to sign in to StreamX",
     images: [
       {
-        url: "https://StreamX.com/og.webp",
+        url: "https://StreamX-one.vercel.app/og.webp",
         alt: "Verify Email | StreamX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://StreamX.com/login/verify",
+    site: "https://StreamX-one.vercel.app/login/verify",
     title: "Verify Email | StreamX",
     description: "Check your email for the magic link to sign in to StreamX",
     images: [
       {
-        url: "https://StreamX.com/og.webp",
+        url: "https://StreamX-one.vercel.app/og.webp",
         alt: "Verify Email | StreamX",
       },
     ],

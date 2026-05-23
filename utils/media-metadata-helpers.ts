@@ -51,9 +51,9 @@ export async function generateMediaMetadata({
     title: titleWithYear,
     ...(mediaType === "movie" && {
       alternates: {
-        canonical: `https://StreamX.com/movies/${mediaId}`,
+        canonical: `https://StreamX-one.vercel.app/movies/${mediaId}`,
         languages: {
-          "en-US": `https://StreamX.com/movies/${mediaId}`,
+          "en-US": `https://StreamX-one.vercel.app/movies/${mediaId}`,
         },
       },
     }),

@@ -29,6 +29,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/privacy/",
       },
     ],
-    sitemap: "https://StreamX.com/sitemap.xml",
+    sitemap: "https://StreamX-one.vercel.app/sitemap.xml",
   };
 }

@@ -2,185 +2,69 @@
 
 # [StreamX](https://github.com/PranavSagarXD/StreamX)
 
-StreamX is a platform for streaming movies and TV shows. It is a open-source, no-cost, and ad-free movie and tv show stream aggregator. Streams are curated from some of the most popular API providers.
+**StreamX** is a high-performance, open-source streaming aggregator designed for the modern web. It provides a seamless, ad-free interface for discovering and watching movies and TV shows by curating content from the most reliable API providers.
 
-## ⚡️ Tech Stack
+Built with a focus on speed, privacy, and user experience, StreamX acts as a sophisticated frontend for existing stream sources, removing the clutter and intrusive advertisements typically found on traditional streaming sites.
 
-- [Bun](https://bun.sh/)
-- [Next.js](https://nextjs.org/)
-- [Resend](https://resend.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Postgres](https://www.postgresql.org/)
-- [Shadcn UI](https://ui.shadcn.com/)
-- [Husky](https://typicode.github.io/husky/#/)
-- [Drizzle ORM](https://orm.drizzle.team/)
-- [Jest](https://jestjs.io/)
-- [NextAuth.js](https://next-auth.js.org/)
-- [TMDb API](https://www.themoviedb.org/documentation/api)
-- [Biome](https://biomejs.dev/)
+## 🚀 Key Features
 
-## 🏃🏾‍♂️ Run StreamX Locally
+- 🍿 **Curated Aggregation**: Automatically pulls the best available streams for any movie or TV show.
+- 📺 **Comprehensive Content Discovery**: Explore trending titles, genres, and personalized recommendations powered by the TMDb API.
+- 🔍 **Smart Search**: High-speed search with real-time previews and pagination.
+- 🔐 **Secure Magic Link Auth**: Passwordless authentication via email—fast, secure, and user-friendly.
+- 💾 **Local Persistence**: A robust Watchlist feature that uses IndexedDB for high-performance client-side storage, ensuring your data is always available.
+- 🎨 **Premium UI/UX**: A beautiful, dark-themed interface built with Tailwind CSS and Shadcn UI components. Fully responsive for desktop, tablet, and mobile.
+- ⚡ **Performance First**: Leveraging Next.js 14 App Router and Bun for lightning-fast server-side rendering and minimal bundle sizes.
+- 🛠️ **Extensible Architecture**: Easily add or modify stream providers with a type-safe configuration system.
 
-> [!IMPORTANT]
-> Prerequisites:
->
-> - [Bun](https://bun.sh/) installed on your machine.
-> - [Biome](https://biomejs.dev/) binary installed on your machine.
-> - A [PostgreSQL](https://www.postgresql.org/) database.
-> - A [TMDb](https://www.themoviedb.org/) API key.
-> - A [Resend](https://resend.com/) API key.
-> - A [GitHub OAuth App](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app) created.
+## ⚡️ Modern Tech Stack
 
-To run the project on your machine, follow the steps below:
+StreamX is built using the latest industry-standard tools to ensure maintainability and performance:
 
-1. Clone or fork the repository
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Runtime**: [Bun](https://bun.sh/) (Fastest JavaScript runtime)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (Strictly typed for reliability)
+- **Database & ORM**: [PostgreSQL](https://www.postgresql.org/) with [Drizzle ORM](https://orm.drizzle.team/)
+- **Authentication**: [NextAuth.js](https://next-auth.js.org/) with Resend Magic Links
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
+- **State & Storage**: [TanStack Query](https://tanstack.com/query) & IndexedDB
+- **Validation**: [Zod](https://zod.dev/) for type-safe API responses
+- **Linting & Formatting**: [Biome](https://biomejs.dev/)
 
-```bash
-git clone git@github.com:PranavSagarXD/StreamX.git
-cd StreamX
-```
+## 🏗️ How it Works
 
-2. Next, create a `.env.local` file in the root directory of the project and add the following environment variables:
+StreamX functions as a **Meta-Aggregator**. It doesn't host any video content itself. Instead, it:
+1.  **Orchestrates Metadata**: Fetches rich media information (posters, synopses, cast) from TMDb.
+2.  **Resolves Streams**: Dynamically maps requested titles to third-party stream providers.
+3.  **Enhances UX**: Wraps raw streams in a clean, unified player interface that blocks intrusive tracking and popups.
 
-```bash
-TMDB_API_KEY=
-AUTH_SECRET=
-AUTH_RESEND_KEY=
-AUTH_URL=
-PROD_DATABASE_URL=
-DATABASE_URL=
-```
+## 🧩 FAQ
 
-You can get your own instance of the API keys by creating an account on [TMDb](https://www.themoviedb.org/) and [Resend](https://resend.com/).
+### Why StreamX?
+The web is full of aggregators, but most are cluttered with ads and poor tracking. StreamX was built to provide a "Netflix-like" experience for open-source streaming—clean, fast, and free.
 
-For the database, you can use any PostgreSQL database you want. I recommend using [Neon](https://neon.tech/) for production and [Local Postgres](https://www.postgresql.org/) for development.
+### How are the streams sourced?
+StreamX uses a modular "Video Server" system. Developers can add new providers by implementing a simple interface in the codebase, allowing the platform to adapt as new sources become available.
 
-For the GitHub OAuth app, you can create one by following the instructions [here](https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app)!
-
-3. Install dependencies
-
-StreamX is primarily built using Bun, so you'll need to install it first. You can do so by following the instructions [here](https://bun.sh/docs/installation).
-
-```bash
-bun install
-```
-
-4. Configure magic strings
-
-There's a few places in the codebase where I'm hardcoding some strings that you might want to change. You can find some of them in `lib/constants.ts`. Additionally, you might want to modify the email templates in `emails/` and `metadata` objects in `app/` and `layout/`.
-
-If you end up not changing the magic strings, that's fine too, but I'd appreciate credit if you re-deploy StreamX without modifications!
-
-5. Set up the database
-
-```bash
-bun run db:generate
-bun run db:push
-bun run db:studio # optional
-```
-
-These will generate the necessary migration files and push the schema to your PostgreSQL database. You can optionally use `bun run db:studio` to open Drizzle's database studio to visualize the DB internals.
-
-6. Run the development server
-
-```bash
-bun run dev
-```
-
-7. Finally, open [http://localhost:3000](http://localhost:3000) in your browser to see StreamX in action!
-
-## FAQ
-
-### What is the best way to watch movies and TV shows?
-
-StreamX, duh! (But let's be real, there's 1000s of us aggregators - which makes this site's personal touch all the more special!)
-
-### How do I add a new stream provider?
-
-Stream providers (also called video servers) are the services that actually serve the video content. To add a new stream provider, you need to add it to the `videoServers` array in `lib/stores/server-store.ts`.
-
-Each stream provider must implement the `VideoServer` interface, which includes:
-
-- `id`: A unique identifier for the provider (e.g., `"vidsrc"`)
-- `name`: Display name for the provider (e.g., `"VidSrc"`)
-- `baseUrl`: Base URL of the provider's service
-- `getMovieUrl(tmdbId)`: Function that returns the embed URL for a movie
-- `getTvUrl(tmdbId)`: Function that returns the embed URL for a TV show
-- `getEpisodeUrl(tmdbId, season, episode)`: Function that returns the embed URL for a specific episode
-- Optional: `getAnimeUrl`, `getAnimePaheUrl`, `getVidnestUrl` for anime support
-- Optional: `checkAvailability` and `checkIndividualAvailability` for availability checking
-
-Here's an example of adding a new provider:
-
-```typescript
-{
-  id: "myprovider",
-  name: "My Provider",
-  baseUrl: "https://myprovider.com",
-  getMovieUrl: (tmdbId) => `https://myprovider.com/embed/movie/${tmdbId}`,
-  getTvUrl: (tmdbId) => `https://myprovider.com/embed/tv/${tmdbId}`,
-  getEpisodeUrl: (tmdbId, season, episode) =>
-    `https://myprovider.com/embed/tv/${tmdbId}?s=${season}&e=${episode}`,
-}
-```
-
-Add this object to the `videoServers` array in `lib/stores/server-store.ts`. The provider will automatically be available in the application's server selection UI.
-
-### How do I sign-in locally?
-
-When running the application in development mode (`NODE_ENV=development`), authentication works differently than in production:
-
-1. **Start the development server**:
-   ```bash
-   bun run dev
-   ```
-
-2. **Navigate to the login page** at `http://localhost:3000/login`
-
-3. **Enter your email address** and submit the form
-
-4. **Check your terminal/console** - Instead of sending an email, the magic link will be logged directly to your terminal with a formatted output like this:
-
-   ```
-   ============================================================
-   🔐 MAGIC LINK FOR DEVELOPMENT
-   ============================================================
-   📧 Email: your-email@example.com
-   🔗 Magic Link: http://localhost:3000/api/auth/callback/resend?...
-   ============================================================
-   ⚠️  Development mode: Email not sent. Use the link above to sign in.
-   ============================================================
-   ```
-
-5. **Automatic redirect** - In development mode, you'll be automatically redirected to the callback URL and signed in. The link is also logged to the terminal in case you need to manually access it or if the redirect doesn't work
-
-> [!NOTE]
-> In production, magic links are sent via email using Resend. The development mode bypasses email sending for convenience during local development.
-
-## 📝 Scripts
-
-| Script         | Description                                                          |
-| -------------- | -------------------------------------------------------------------- |
-| `dev`          | Run Next.js development server.                                      |
-| `build`        | Build the Next.js application.                                       |
-| `start`        | Start the Next.js production server.                                 |
-| `preview`      | Start the Next.js server on port 3001 for previewing.                |
-| `format`       | Format code using Prettier for specified file patterns.              |
-| `check-format` | Check if code is formatted correctly using Prettier.                 |
-| `type-check`   | Run TypeScript type-checking using the `tsc` compiler.               |
-| `lint`         | Lint code using ESLint for TypeScript and TypeScript React files.    |
-| `lint:fix`     | Fix linting issues using ESLint for TypeScript and TypeScript React. |
-| `test-all`     | Run type-checking, linting, and code formatting checks.              |
-| `prepare`      | Install Husky Git hooks.                                             |
-| `db:generate`  | Generate a new migration file based on schema changes.               |
-| `db:push`      | Push the current schema to the database without a migration file.    |
-| `db:studio`    | Open Drizzle's database studio for managing the database.            |
-| `db:migrate`   | Apply pending migrations to the database.                            |
+### Is my data private?
+Yes. Authentication is handled via secure magic links, and your personal watchlist is stored locally on your device using IndexedDB, giving you full control over your data.
 
 ## 🤝🏿 Contributing
 
-Contributions, feedback, and suggestions are always welcome. If you have any questions, feel free to open an issue. I can't guarantee I'll be able to address everything as a solo dev (on top of juggling other commitments), but I'll do my best!
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## 🙏🏿 Support the project
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-If you find StreamX useful, consider starring the repo! I appreciate all the support and feedback I've received from the community over the years developing this project.
+## 🙏🏿 Support
+
+If you find StreamX useful and want to support the project, please consider:
+- Giving the repository a ⭐ **Star**.
+- Sharing the project with your friends.
+- Providing feedback or reporting bugs via GitHub Issues.
+
+---
+*Disclaimer: StreamX is a tool for educational purposes. It does not host any media files. Users are responsible for ensuring they have the rights to the content they access.*

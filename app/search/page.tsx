@@ -6,7 +6,7 @@ import { Suspense } from "react";
 export default function SearchPage() {
   return (
     <div className="w-full flex flex-col">
-      <StaticHero imageUrl="/movie-banner.webp" title="" route="" />
+      <StaticHero imageUrl="/movie-banner.png" title="" route="" />
       <ContentContainer className="w-full flex flex-col items-center z-10 pt-12">
         <div className="text-center my-12">
           <h1 className="text-4xl md:text-7xl font-bold text-foreground tracking-tight">

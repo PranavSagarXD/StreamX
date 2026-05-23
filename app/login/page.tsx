@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: "Login to StreamX | Access Your Watchlist & More",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.webp",
+        url: "https://StreamX-one.vercel.app/og.png",
         alt: "Login | StreamX",
       },
     ],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: "Login to StreamX | Access Your Watchlist & More",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.webp",
+        url: "https://StreamX-one.vercel.app/og.png",
         alt: "Login | StreamX",
       },
     ],

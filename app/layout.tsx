@@ -34,7 +34,7 @@ export const metadata: Metadata = {
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
     images: [
       {
-        url: "https://github.com/PranavSagarXD/StreamX/raw/main/public/og.webp",
+        url: "https://github.com/PranavSagarXD/StreamX/raw/main/public/og.png",
         alt: "StreamX | Watch Movies and TV Shows",
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "StreamX | Watch Movies and TV Shows",
     description:
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
-    images: ["https://github.com/PranavSagarXD/StreamX/raw/main/public/og.webp"],
+    images: ["https://github.com/PranavSagarXD/StreamX/raw/main/public/og.png"],
   },
 };
 

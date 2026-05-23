@@ -38,7 +38,7 @@ export default async function BrowseGenrePage(props: PageProps) {
   const backdropImage =
     initialItems.length > 0 && initialItems[0].backdrop_path
       ? `https://image.tmdb.org/t/p/original${initialItems[0].backdrop_path}`
-      : "/movie-banner.webp";
+      : "/movie-banner.png";
 
   return (
     <PageContainer>

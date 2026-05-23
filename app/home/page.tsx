@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.webp",
+        url: "https://StreamX-one.vercel.app/og.png",
         alt: "Home | StreamX",
       },
     ],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Home |StreamX",
     description:
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
-    images: ["https://StreamX-one.vercel.app/og.webp"],
+    images: ["https://StreamX-one.vercel.app/og.png"],
   },
 };
 
@@ -212,7 +212,7 @@ export default async function Home() {
 
   return (
     <div>
-      <PageBackground imageUrl="/movie-banner.webp" title="Home" />
+      <PageBackground imageUrl="/movie-banner.png" title="Home" />
       <main>
         <Suspense
           fallback={

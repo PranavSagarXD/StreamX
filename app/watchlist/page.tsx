@@ -88,7 +88,7 @@ export default async function WatchlistPage() {
   // Pass all items to client (client will handle filtering/sorting)
   return (
     <div className="w-full flex flex-col">
-      <StaticHero imageUrl="/movie-banner.webp" title="" route="" />
+      <StaticHero imageUrl="/movie-banner.png" title="" route="" />
       <ContentContainer className="w-full flex flex-col items-center z-10">
         <WatchlistClient
           allItems={itemsWithWatchlist}

@@ -115,7 +115,7 @@ export default async function MoviesPage() {
 
   return (
     <>
-      <PageBackground imageUrl="/movie-banner.webp" title="Movies" />
+      <PageBackground imageUrl="/movie-banner.png" title="Movies" />
       <Suspense
         fallback={
           <div className="relative h-[80vh] md:h-[92vh] overflow-hidden bg-black" />

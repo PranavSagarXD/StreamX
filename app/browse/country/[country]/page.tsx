@@ -40,7 +40,7 @@ export default async function BrowseCountryPage(props: PageProps) {
   const backdropImage =
     initialItems.length > 0 && initialItems[0].backdrop_path
       ? `https://image.tmdb.org/t/p/original${initialItems[0].backdrop_path}`
-      : "/movie-banner.webp";
+      : "/movie-banner.png";
 
   const pageTitle = `${countryEmoji} ${countryName} ${mediaType === "movie" ? "Movies" : "TV Shows"}`;
 

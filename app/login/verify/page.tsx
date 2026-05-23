@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     description: "Check your email for the magic link to sign in to StreamX",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.webp",
+        url: "https://StreamX-one.vercel.app/og.png",
         alt: "Verify Email | StreamX",
       },
     ],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Check your email for the magic link to sign in to StreamX",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.webp",
+        url: "https://StreamX-one.vercel.app/og.png",
         alt: "Verify Email | StreamX",
       },
     ],

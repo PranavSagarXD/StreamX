@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.webp",
+        url: "https://StreamX-one.vercel.app/og.png",
         alt: "StreamX | Watch Movies and TV Shows",
       },
     ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "StreamX | Watch Movies and TV Shows",
     description:
       "StreamX is an open-source, no-cost, and ad-free movie and tv show stream aggregator.",
-    images: ["https://StreamX-one.vercel.app/og.webp"],
+    images: ["https://StreamX-one.vercel.app/og.png"],
   },
 };
 

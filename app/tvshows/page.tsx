@@ -79,7 +79,7 @@ export default async function TVShowsPage() {
     }>;
   return (
     <>
-      <PageBackground imageUrl="/movie-banner.webp" title="TV Shows" />
+      <PageBackground imageUrl="/movie-banner.png" title="TV Shows" />
       <main>
         <MediaCarousel items={enrichedTrendingItems} />
       </main>

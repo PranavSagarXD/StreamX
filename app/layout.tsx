@@ -57,6 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        <link rel="manifest" href="/manifest.json" />
         {process.env.NODE_ENV === "production" && (
           <Script
             defer

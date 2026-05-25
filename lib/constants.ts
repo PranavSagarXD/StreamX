@@ -15,9 +15,10 @@ export const LOGGER_TITLE = "StreamX 3.0";
 // The email domain must be verified in your Resend account
 // Example: RESEND_FROM_EMAIL="StreamX <noreply@yourdomain.com>"
 export const MAGIC_LINK_RESEND_FROM =
-  process.env.NODE_ENV === "production"
-    ? "StreamX <onboarding@resend.dev>"
-    : process.env.RESEND_FROM_EMAIL || "StreamX <delivered@resend.dev>";
+  process.env.RESEND_FROM_EMAIL ||
+  (process.env.NODE_ENV === "production"
+    ? "StreamX <no-reply@rexd.space>"
+    : "StreamX <delivered@resend.dev>");
 export const MAGIC_LINK_RESEND_SUBJECT =
   "StreamX - Here's your magic link to sign in";
 

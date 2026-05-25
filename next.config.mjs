@@ -3,6 +3,12 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/:path*",
+        destination: "https://stream.rexd.space/:path*",
+        has: [{ type: "host", value: "stream-one.vercel.app" }],
+        permanent: true,
+      },
+      {
         source: "/movies/top_rated",
         destination: "/movies/browse?filter=top-rated",
         permanent: true,

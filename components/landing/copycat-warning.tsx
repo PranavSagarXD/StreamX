@@ -61,13 +61,13 @@ export const CopycatWarning = () => {
         </Popover>{" "}
         The ONLY official site is{" "}
         <a
-          href="https://StreamX-one.vercel.app"
+          href="https://stream.rexd.space"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-yellow-300 transition-colors duration-200 drop-shadow-md"
           aria-label="Visit the official StreamX website"
         >
-          StreamX-one.vercel.app
+          stream.rexd.space
         </a>{" "}
       </p>
     </div>

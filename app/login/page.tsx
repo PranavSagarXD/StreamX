@@ -33,24 +33,24 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    url: "https://StreamX-one.vercel.app/login",
+    url: "https://stream.rexd.space/login",
     title: "Login | StreamX",
     description: "Login to StreamX | Access Your Watchlist & More",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.png",
+        url: "https://stream.rexd.space/og.png",
         alt: "Login | StreamX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://StreamX-one.vercel.app/login",
+    site: "https://stream.rexd.space/login",
     title: "Login | StreamX",
     description: "Login to StreamX | Access Your Watchlist & More",
     images: [
       {
-        url: "https://StreamX-one.vercel.app/og.png",
+        url: "https://stream.rexd.space/og.png",
         alt: "Login | StreamX",
       },
     ],

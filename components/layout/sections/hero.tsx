@@ -11,13 +11,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useDetectAdBlock } from "adblock-detect-react";
-import { ArrowRight, User } from "lucide-react";
+import { ArrowRight, User, List } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/legacy/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import StreamingServices from "./steaming-services";
+import { useSession } from "next-auth/react";
 
 const NeuralNetworkBackground = dynamic(
   () => import("@/components/ui/neural-network-hero"),
@@ -26,6 +27,7 @@ const NeuralNetworkBackground = dynamic(
 
 export const HeroSection = () => {
   const router = useRouter();
+  const { data: session } = useSession();
   const [adblockAlertTrigger, setAdblockAlertTrigger] =
     useState<boolean>(false);
 
@@ -109,16 +111,24 @@ export const HeroSection = () => {
                     className="w-full sm:w-auto sm:min-w-[160px] font-light pointer-events-auto select-auto"
                   >
                     <Link
-                      href="/login"
+                      href={session ? "/watchlist" : "/login"}
                       className="flex items-center justify-center group/user"
                     >
-                      Login / Signup
-                      <User className="size-5 ml-2 group-hover/user:scale-110 transition-transform" />
+                      {session ? "View Watchlist" : "Login / Signup"}
+                      {session ? (
+                        <List className="size-5 ml-2 group-hover/user:scale-110 transition-transform" />
+                      ) : (
+                        <User className="size-5 ml-2 group-hover/user:scale-110 transition-transform" />
+                      )}
                     </Link>
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Login to save watchlists, bookmark favorites, and more</p>
+                  <p>
+                    {session
+                      ? "Access your personal watchlist"
+                      : "Login to save watchlists, bookmark favorites, and more"}
+                  </p>
                 </TooltipContent>
               </Tooltip>
             </div>

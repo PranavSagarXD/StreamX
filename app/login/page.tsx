@@ -57,7 +57,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const session = await auth();
+
+  if (session) {
+    redirect("/watchlist");
+  }
+
   const handleLogin = async (formData: FormData) => {
     "use server";
 

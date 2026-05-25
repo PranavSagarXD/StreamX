@@ -17,57 +17,54 @@ interface MagicLinkEmailProps {
 }
 
 export const MagicLinkEmail = ({ url, host }: MagicLinkEmailProps) => {
-  // Use the host provided by Auth.js
   const protocol = host.includes("localhost") ? "http" : "https";
-  const logoSrc = `${protocol}://${host}/logo.png`;
+  const baseUrl = `${protocol}://${host}`;
+  const logoSrc = `${baseUrl}/logo.png`;
 
   return (
     <Html>
       <Head />
-      <Preview>If you didn't request this, please ignore this email.</Preview>
+      <Preview>Your secure access to StreamX</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={logoSection}>
-            <Img
-              src={logoSrc}
-              width="48"
-              height="48"
-              alt="StreamX"
-              style={logo}
-            />
+            <Link href={baseUrl}>
+              <Img
+                src={logoSrc}
+                width="64"
+                height="64"
+                alt="StreamX Logo"
+                style={logo}
+              />
+            </Link>
           </Section>
 
-          <Heading style={heading}>🪄 Your magic link</Heading>
+          <Heading style={heading}>Welcome back to StreamX</Heading>
 
-          <Text style={linkText}>
-            👉{" "}
-            <Link href={url} style={magicLink}>
-              Click here to sign in
-            </Link>{" "}
-            👈
+          <Text style={bodyText}>
+            You’ve requested to sign in to your StreamX account. Click the button below to log in securely.
           </Text>
 
-          <Text style={disclaimer}>
-            If you didn't request this, please ignore this email.
-          </Text>
-
-          <Section style={signatureSection}>
-            <Text style={signature}>Cheers,</Text>
-            <Text style={signature}>
-              - The StreamX team
-            </Text>
+          <Section style={buttonContainer}>
+            <Link href={url} style={button}>
+              Sign in to StreamX
+            </Link>
           </Section>
+
+          <Text style={bodyText}>
+            If you did not request this sign-in, you can safely ignore this email. Your account remains secure.
+          </Text>
 
           <Section style={footerSection}>
-            <Img
-              src={logoSrc}
-              width="24"
-              height="24"
-              alt="StreamX"
-              style={footerLogo}
-            />
-            <Text style={footer}>
-              This link expires in 24 hours and can only be used once.
+            <Text style={footerText}>
+              Need help?{" "}
+              <Link href={`${baseUrl}/contact`} style={link}>Contact our support team</Link>.
+            </Text>
+            <Text style={footerText}>
+              StreamX | <Link href={baseUrl} style={link}>Visit website</Link>
+            </Text>
+            <Text style={footerText}>
+              &copy; {new Date().getFullYear()} StreamX. All rights reserved.
             </Text>
           </Section>
         </Container>
@@ -78,94 +75,80 @@ export const MagicLinkEmail = ({ url, host }: MagicLinkEmailProps) => {
 
 export default MagicLinkEmail;
 
-const link = {
-  color: "#8b5cf6",
-  textDecoration: "none",
-  fontWeight: "600",
-};
-
-const footerLogo = {
-  display: "block",
-  filter: "grayscale(100%)",
-  opacity: "0.6",
-  marginBottom: "12px",
-};
-
 const main = {
-  backgroundColor: "#ffffff",
+  backgroundColor: "#0a0a0a",
   fontFamily:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-  padding: "40px 20px",
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+  padding: "40px 10px",
   minHeight: "100vh",
 };
 
 const container = {
-  backgroundColor: "#ffffff",
-  background:
-    "linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.12) 35%, transparent 70%)",
-  borderRadius: "12px",
-  padding: "48px",
-  maxWidth: "560px",
+  backgroundColor: "#111111",
+  border: "1px solid #333",
+  borderRadius: "16px",
+  padding: "40px",
+  maxWidth: "450px",
   margin: "0 auto",
-  boxShadow:
-    "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  width: "100%",
 };
 
 const logoSection = {
-  marginBottom: "32px",
+  marginBottom: "24px",
+  textAlign: "center" as const,
 };
 
 const logo = {
-  display: "block",
+  margin: "0 auto",
+  borderRadius: "8px",
 };
 
 const heading = {
-  fontSize: "32px",
-  fontWeight: "700",
-  color: "#1a1a1a",
-  margin: "0 0 24px 0",
-};
-
-const linkText = {
-  fontSize: "18px",
-  lineHeight: "28px",
-  margin: "32px 0",
-  color: "#374151",
-};
-
-const magicLink = {
-  color: "#8b5cf6",
-  textDecoration: "none",
+  fontSize: "22px",
   fontWeight: "600",
+  color: "#ffffff",
+  margin: "0 0 16px 0",
+  textAlign: "center" as const,
 };
 
-const disclaimer = {
-  fontSize: "16px",
+const bodyText = {
+  fontSize: "15px",
+  color: "#a1a1aa",
+  margin: "0 0 20px 0",
+  textAlign: "center" as const,
   lineHeight: "24px",
-  color: "#6b7280",
-  margin: "32px 0",
 };
 
-const signatureSection = {
-  margin: "48px 0 32px 0",
+const buttonContainer = {
+  textAlign: "center" as const,
+  marginBottom: "24px",
 };
 
-const signature = {
+const button = {
+  backgroundColor: "#D247BF",
+  borderRadius: "8px",
+  color: "#ffffff",
   fontSize: "16px",
-  lineHeight: "24px",
-  color: "#374151",
-  margin: "4px 0",
+  fontWeight: "600",
+  textDecoration: "none",
+  padding: "12px 24px",
+  display: "inline-block",
+};
+
+const link = {
+  color: "#D247BF",
+  textDecoration: "underline",
 };
 
 const footerSection = {
-  borderTop: "1px solid #e5e7eb",
-  paddingTop: "32px",
-  marginTop: "32px",
+  borderTop: "1px solid #333",
+  paddingTop: "20px",
+  marginTop: "20px",
 };
 
-const footer = {
-  fontSize: "14px",
-  lineHeight: "20px",
-  color: "#9ca3af",
-  margin: "0",
+const footerText = {
+  fontSize: "12px",
+  color: "#71717a",
+  textAlign: "center" as const,
+  margin: "8px 0",
 };
